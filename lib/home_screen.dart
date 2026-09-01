@@ -31,6 +31,7 @@ class HomeScreen extends StatelessWidget{
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
                         "Total Spent this Month",
@@ -117,7 +118,9 @@ class HomeScreen extends StatelessWidget{
           ),
         ),
         floatingActionButton: FloatingActionButton(
-            onPressed: (){},
+            onPressed: (){
+              Icon(Icons.add);
+            },
         ),
     );
   }
