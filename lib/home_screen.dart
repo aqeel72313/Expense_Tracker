@@ -45,7 +45,7 @@ class HomeScreen extends StatelessWidget{
                         "Rs.12,456",
                     style: TextStyle(
                       color: Theme.of(context).colorScheme.surface,
-                      fontSize: 16,
+                      fontSize: 32,
                       ),
                     ),
                     SizedBox(height: 10),
@@ -53,6 +53,7 @@ class HomeScreen extends StatelessWidget{
                         "August 2026",
                     style: TextStyle(
                       color:Theme.of(context).colorScheme.surface,
+                      fontSize: 16,
                       ),
                     )
                   ],
