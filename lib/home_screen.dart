@@ -21,6 +21,8 @@ class HomeScreen extends StatelessWidget{
         ),
         body: Padding(
             padding: EdgeInsets.only(top: 20, left: 20, right: 20),
+
+          // Total Spent Card
           child: Column(
             children: [
               Container(
@@ -59,7 +61,81 @@ class HomeScreen extends StatelessWidget{
                   ],
                 ),
               ),
+              SizedBox(height: 20),
+
+              // Category Container
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    "Category Overview",
+                    style: TextStyle(
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
+                      color: Theme.of(context).colorScheme.onSurface,
+                    ),
+                  ),
+                  SizedBox(height: 10),
+                  Row(
+                    children: [
+                      Expanded(
+                          child: Container(
+                            width: double.infinity,
+                            padding: EdgeInsets.all(20),
+                            decoration: BoxDecoration(
+                              color: Theme.of(context).colorScheme.surface,
+                              borderRadius: BorderRadius.circular(15),
+                            ),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Icon(Icons.fastfood_rounded),
+                                SizedBox(width: 10),
+                                Text(
+                                  "Food",
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 18,
+                                ),
+                                ),
+                              ],
+                            ),
+                          ),
+                      ),
+                      
+                      SizedBox(width: 20),
+                      
+                      Expanded(
+                        child: Container(
+                          width: double.infinity,
+                          padding: EdgeInsets.all(20),
+                          decoration: BoxDecoration(
+                            color: Theme.of(context).colorScheme.surface,
+                            borderRadius: BorderRadius.circular(15),
+                          ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Icon(Icons.fastfood_rounded),
+                              SizedBox(width: 10),
+                              Text(
+                                "Food",
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 18
+                              ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
               SizedBox(height: 25),
+
+              // Recent Expenses
               Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
@@ -81,7 +157,7 @@ class HomeScreen extends StatelessWidget{
                 child: Row(
                   children: [
                     Icon(
-                        Icons.restaurant_rounded,
+                        Icons.fastfood_rounded,
                       size: 30,
                     ),
                     SizedBox(width: 15),
@@ -118,6 +194,8 @@ class HomeScreen extends StatelessWidget{
             ],
           ),
         ),
+
+        // Floating button
         floatingActionButton: FloatingActionButton(
             onPressed: (){},
           child: Icon(Icons.add),
