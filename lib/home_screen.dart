@@ -61,7 +61,7 @@ class HomeScreen extends StatelessWidget{
               Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
-                    "Recent Expense",
+                    "Recent Expenses",
                   style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
@@ -115,6 +115,9 @@ class HomeScreen extends StatelessWidget{
               ),
             ],
           ),
+        ),
+        floatingActionButton: FloatingActionButton(
+            onPressed: (){},
         ),
     );
   }
