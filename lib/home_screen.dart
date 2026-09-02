@@ -5,7 +5,9 @@ class HomeScreen extends StatelessWidget{
   @override
   Widget build(BuildContext context){
       return Scaffold(
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         appBar: AppBar(
+          backgroundColor: Theme.of(context).scaffoldBackgroundColor,
           title: Text(
               "Expense Tracker",
             style: TextStyle(
@@ -39,7 +41,7 @@ class HomeScreen extends StatelessWidget{
                         "Total Spent this Month",
                     style: TextStyle(
                       color: Theme.of(context).colorScheme.surface,
-                      fontSize: 18,
+                      fontSize: 16,
                       ),
                     ),
                     SizedBox(height: 10),
@@ -65,14 +67,14 @@ class HomeScreen extends StatelessWidget{
 
               // Category Container
               Column(
-                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
                     "Category Overview",
                     style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
-                      color: Theme.of(context).colorScheme.onSurface,
+                      color: Theme.of(context).colorScheme.surface,
                     ),
                   ),
                   SizedBox(height: 10),
@@ -85,37 +87,21 @@ class HomeScreen extends StatelessWidget{
                               color: Theme.of(context).colorScheme.surface,
                               borderRadius: BorderRadius.circular(15),
                             ),
-                            child: Column(
-                              children: [
-                                Row(
-                                 mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Icon(
-                                        Icons.fastfood_rounded,
-                                    ),
-                                    SizedBox(width: 10),
-                                    Text(
-                                        "Food",
-                                    style: TextStyle(
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.bold,
-                                      ),
-                                    ),
-                                  ],
-
+                            child: Container(
+                              width: double.infinity,
+                              height: 46,
+                              alignment: Alignment.center,
+                              decoration: BoxDecoration(
+                                color: Colors.yellow,
+                                shape: BoxShape.circle,
+                              ),
+                              child: Icon(
+                                Icons.fastfood_rounded,
+                              color: Theme.of(context).colorScheme.secondary,
                                 ),
-                                SizedBox(height: 8),
-                                Text(
-                                    "Rs.  4,500",
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 16,
-                                ),
-                                ),
-                              ],
+                              ),
                             ),
                           ),
-                      ),
                       
                       SizedBox(width: 20),
                       
@@ -157,6 +143,7 @@ class HomeScreen extends StatelessWidget{
                   style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
+                    color: Theme.of(context).colorScheme.surface,
                   ),
                 ),
               ),

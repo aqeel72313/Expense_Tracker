@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
 
               outline: Color(0xFFE2E8F0),
         ),
-        scaffoldBackgroundColor: const Color(0xFFF8FAFC),
+        scaffoldBackgroundColor: const Color(0xFF0F172A),
 
         appBarTheme: const AppBarTheme(
           backgroundColor: Color(0xFF1E293B),
