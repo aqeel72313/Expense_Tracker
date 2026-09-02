@@ -83,18 +83,19 @@ class HomeScreen extends StatelessWidget{
                        Expanded(
                           child: Container(
                             padding: EdgeInsets.all(20),
+                            alignment: Alignment.centerLeft,
                             decoration: BoxDecoration(
                               color: Theme.of(context).colorScheme.surface,
                               borderRadius: BorderRadius.circular(15),
-                            ),
+                              ),
                             child: Container(
-                              width: double.infinity,
+                              width: 46,
                               height: 46,
                               alignment: Alignment.center,
                               decoration: BoxDecoration(
                                 color: Colors.yellow,
                                 shape: BoxShape.circle,
-                              ),
+                                ),
                               child: Icon(
                                 Icons.fastfood_rounded,
                               color: Theme.of(context).colorScheme.secondary,
