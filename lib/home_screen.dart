@@ -70,7 +70,7 @@ class HomeScreen extends StatelessWidget{
                   Text(
                     "Category Overview",
                     style: TextStyle(
-                      fontSize: 24,
+                      fontSize: 20,
                       fontWeight: FontWeight.bold,
                       color: Theme.of(context).colorScheme.onSurface,
                     ),
@@ -78,24 +78,37 @@ class HomeScreen extends StatelessWidget{
                   SizedBox(height: 10),
                   Row(
                     children: [
-                      Expanded(
+                       Expanded(
                           child: Container(
-                            width: double.infinity,
                             padding: EdgeInsets.all(20),
                             decoration: BoxDecoration(
                               color: Theme.of(context).colorScheme.surface,
                               borderRadius: BorderRadius.circular(15),
                             ),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
+                            child: Column(
                               children: [
-                                Icon(Icons.fastfood_rounded),
-                                SizedBox(width: 10),
+                                Row(
+                                 mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Icon(
+                                        Icons.fastfood_rounded,
+                                    ),
+                                    SizedBox(width: 10),
+                                    Text(
+                                        "Food",
+                                    style: TextStyle(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                SizedBox(height: 8),
                                 Text(
-                                  "Food",
+                                    "Rs.  4,500",
                                 style: TextStyle(
                                   fontWeight: FontWeight.bold,
-                                  fontSize: 18,
+                                  fontSize: 16,
                                 ),
                                 ),
                               ],
@@ -116,14 +129,14 @@ class HomeScreen extends StatelessWidget{
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Icon(Icons.fastfood_rounded),
+                              Icon(Icons.directions_car_rounded),
                               SizedBox(width: 10),
                               Text(
-                                "Food",
+                                "Transport",
                               style: TextStyle(
                                 fontWeight: FontWeight.bold,
-                                fontSize: 18
-                              ),
+                                fontSize: 18,
+                                ),
                               ),
                             ],
                           ),
