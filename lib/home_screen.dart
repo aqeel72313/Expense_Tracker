@@ -94,20 +94,36 @@ class HomeScreen extends StatelessWidget{
                                 Row(
                                   children: [
                                     Container(
-                                      width: 46,
-                                      height: 46,
+                                      width: 40,
+                                      height: 40,
                                       alignment: Alignment.center,
                                       decoration: BoxDecoration(
-                                        color: Colors.yellow,
+                                        color: Colors.white54,
                                         shape: BoxShape.circle,
                                       ),
                                       child: Icon(
                                         Icons.fastfood_rounded,
+                                        size: 20,
                                         color: Theme.of(context).colorScheme.secondary,
                                       ),
                                     ),
-
+                                    SizedBox(width: 10),
+                                    Text(
+                                        "Food",
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 18,
+                                      ),
+                                    ),
                                   ],
+                                ),
+                                SizedBox(height: 10),
+                                Text(
+                                    "Rs. 4,500",
+                                  style: TextStyle(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                                 ),
                               ],
                             ),
