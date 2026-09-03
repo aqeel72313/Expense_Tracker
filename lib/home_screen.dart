@@ -88,22 +88,32 @@ class HomeScreen extends StatelessWidget{
                               color: Theme.of(context).colorScheme.surface,
                               borderRadius: BorderRadius.circular(15),
                               ),
-                            child: Container(
-                              width: 46,
-                              height: 46,
-                              alignment: Alignment.center,
-                              decoration: BoxDecoration(
-                                color: Colors.yellow,
-                                shape: BoxShape.circle,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Row(
+                                  children: [
+                                    Container(
+                                      width: 46,
+                                      height: 46,
+                                      alignment: Alignment.center,
+                                      decoration: BoxDecoration(
+                                        color: Colors.yellow,
+                                        shape: BoxShape.circle,
+                                      ),
+                                      child: Icon(
+                                        Icons.fastfood_rounded,
+                                        color: Theme.of(context).colorScheme.secondary,
+                                      ),
+                                    ),
+
+                                  ],
                                 ),
-                              child: Icon(
-                                Icons.fastfood_rounded,
-                              color: Theme.of(context).colorScheme.secondary,
-                                ),
-                              ),
+                              ],
                             ),
                           ),
-                      
+                       ),
+
                       SizedBox(width: 20),
                       
                       Expanded(
@@ -129,7 +139,7 @@ class HomeScreen extends StatelessWidget{
                             ],
                           ),
                         ),
-                      ),
+                        ),
                     ],
                   ),
                 ],
