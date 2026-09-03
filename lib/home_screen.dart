@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'add_expense.dart';
 
 class HomeScreen extends StatelessWidget{
   const HomeScreen({super.key});
@@ -82,7 +83,7 @@ class HomeScreen extends StatelessWidget{
                     children: [
                        Expanded(
                           child: Container(
-                            padding: EdgeInsets.all(20),
+                            padding: EdgeInsets.all(15),
                             alignment: Alignment.centerLeft,
                             decoration: BoxDecoration(
                               color: Theme.of(context).colorScheme.surface,
@@ -92,21 +93,13 @@ class HomeScreen extends StatelessWidget{
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                    Container(
-                                      width: 40,
-                                      height: 40,
-                                      alignment: Alignment.center,
-                                      decoration: BoxDecoration(
-                                        color: Colors.white54,
-                                        shape: BoxShape.circle,
-                                      ),
-                                      child: Icon(
+                                    Icon(
                                         Icons.fastfood_rounded,
                                         size: 20,
                                         color: Theme.of(context).colorScheme.secondary,
                                       ),
-                                    ),
                                     SizedBox(width: 10),
                                     Text(
                                         "Food",
@@ -117,12 +110,14 @@ class HomeScreen extends StatelessWidget{
                                     ),
                                   ],
                                 ),
-                                SizedBox(height: 10),
-                                Text(
+                                SizedBox(height: 8),
+                                Center(
+                                  child: Text(
                                     "Rs. 4,500",
-                                  style: TextStyle(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.bold,
+                                    style: TextStyle(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.bold,
+                                    ),
                                   ),
                                 ),
                               ],
@@ -131,31 +126,50 @@ class HomeScreen extends StatelessWidget{
                        ),
 
                       SizedBox(width: 20),
-                      
+
                       Expanded(
                         child: Container(
-                          width: double.infinity,
-                          padding: EdgeInsets.all(20),
+                          padding: EdgeInsets.all(15),
+                          alignment: Alignment.centerLeft,
                           decoration: BoxDecoration(
                             color: Theme.of(context).colorScheme.surface,
                             borderRadius: BorderRadius.circular(15),
                           ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Icon(Icons.directions_car_rounded),
-                              SizedBox(width: 10),
-                              Text(
-                                "Transport",
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 18,
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Icon(
+                                    Icons.local_taxi_rounded,
+                                    size: 20,
+                                    color: Theme.of(context).colorScheme.secondary,
+                                  ),
+                                  SizedBox(width: 10),
+                                  Text(
+                                    "Transport",
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 18,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              SizedBox(height: 8),
+                              Center(
+                                child: Text(
+                                  "Rs. 5,567",
+                                  style: TextStyle(
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                                 ),
                               ),
                             ],
                           ),
                         ),
-                        ),
+                      ),
                     ],
                   ),
                 ],
@@ -186,6 +200,7 @@ class HomeScreen extends StatelessWidget{
                   children: [
                     Icon(
                         Icons.fastfood_rounded,
+                      color: Theme.of(context).colorScheme.secondary,
                       size: 30,
                     ),
                     SizedBox(width: 15),
@@ -199,7 +214,7 @@ class HomeScreen extends StatelessWidget{
                           fontWeight: FontWeight.bold,
                           ),
                         ),
-                        SizedBox(height: 5),
+                        SizedBox(height: 4),
                         Text(
                           "Today",
                         style: TextStyle(
