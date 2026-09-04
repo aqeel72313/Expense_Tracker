@@ -111,6 +111,46 @@ class AddExpenseScreen extends StatelessWidget {
                 ],
               ),
             ),
+            SizedBox(height: 16),
+            Text(
+              "Date",
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 18,
+              ),
+            ),
+            SizedBox(height: 6),
+            Container(
+              padding: EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: Theme.of(context).colorScheme.surface,
+                borderRadius: BorderRadius.circular(20),
+                border: Border.all(
+                  color: Theme.of(context).colorScheme.secondary,
+                  width: 2,
+                ),
+              ),
+              child: Row(
+                children: [
+                  Icon(Icons.calendar_month_rounded),
+                  SizedBox(width: 6),
+                  Text("Select Date"),
+                ],
+              ),
+            ),
+            SizedBox(height: 18),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Theme.of(context).colorScheme.primary,
+              ),
+                onPressed:(){},
+                child: Text(
+                  "Save",
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.surface,
+                  ),
+                ),
+            )
           ],
         ),
       ),
