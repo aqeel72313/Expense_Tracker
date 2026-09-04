@@ -138,16 +138,18 @@ class AddExpenseScreen extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(height: 18),
+            SizedBox(height: 20),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                 backgroundColor: Theme.of(context).colorScheme.primary,
+                minimumSize: const Size(double.infinity,50),
               ),
                 onPressed:(){},
                 child: Text(
                   "Save",
                 style: TextStyle(
                   color: Theme.of(context).colorScheme.surface,
+                  fontSize: 22
                   ),
                 ),
             )
