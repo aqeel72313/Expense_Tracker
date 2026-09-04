@@ -51,7 +51,66 @@ class AddExpenseScreen extends StatelessWidget {
                   ),
                 ),
               ),
-            )
+            ),
+            SizedBox(height: 16),
+            Text(
+                "Amount",
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 18,
+              ),
+            ),
+            SizedBox(height: 6),
+            TextField(
+              decoration: InputDecoration(
+                hintText: "Enter Amount",
+                filled: true,
+                fillColor: Theme.of(context).colorScheme.surface,
+                contentPadding: EdgeInsets.symmetric(
+                  horizontal: 16,
+                  vertical: 16,
+                ),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(20),
+                  borderSide: BorderSide(
+                    color: Theme.of(context).colorScheme.outline,
+                  ),
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(20),
+                  borderSide: BorderSide(
+                    color: Theme.of(context).colorScheme.secondary,
+                    width: 2,
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(height: 16),
+            Text(
+              "Category",
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(height: 6),
+            Container(
+              padding: EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: Theme.of(context).colorScheme.surface,
+                borderRadius: BorderRadius.circular(20),
+                border: Border.all(
+                  color: Theme.of(context).colorScheme.secondary,
+                  width: 2,
+                ),
+              ),
+              child: Row(
+                children: [
+                  Text("Select Category"),
+                  Icon(Icons.keyboard_arrow_down_rounded),
+                ],
+              ),
+            ),
           ],
         ),
       ),
