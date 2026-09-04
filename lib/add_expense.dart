@@ -6,13 +6,20 @@ class AddExpenseScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).colorScheme.surface,
       appBar: AppBar(
-        title: Text("Add Expense"),
-        backgroundColor: Theme.of(context).colorScheme.primary,
+        title: Text(
+            "Add Expense",
+        style: TextStyle(
+          fontSize: 24,
+          ),
+        ),
       ),
       body: Padding(
           padding: EdgeInsets.all(20),
+        child: Column(
 
+        ),
       ),
     );
   }
