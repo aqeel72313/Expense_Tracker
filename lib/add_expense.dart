@@ -17,9 +17,12 @@ class AddExpenseScreen extends StatelessWidget {
       ),
       body: Padding(
           padding: EdgeInsets.all(20),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+
+            // Expense Title Field
             Text(
                 "Expense Title",
             style: TextStyle(
@@ -53,6 +56,8 @@ class AddExpenseScreen extends StatelessWidget {
               ),
             ),
             SizedBox(height: 16),
+
+            // Amount Field
             Text(
                 "Amount",
               style: TextStyle(
@@ -86,6 +91,8 @@ class AddExpenseScreen extends StatelessWidget {
               ),
             ),
             SizedBox(height: 16),
+
+            // Category Field
             Text(
               "Category",
               style: TextStyle(
@@ -95,7 +102,7 @@ class AddExpenseScreen extends StatelessWidget {
             ),
             SizedBox(height: 6),
             Container(
-              padding: EdgeInsets.all(12),
+              padding: EdgeInsets.all(16),
               decoration: BoxDecoration(
                 color: Theme.of(context).colorScheme.surface,
                 borderRadius: BorderRadius.circular(20),
@@ -112,6 +119,8 @@ class AddExpenseScreen extends StatelessWidget {
               ),
             ),
             SizedBox(height: 16),
+
+            // Date Field
             Text(
               "Date",
               style: TextStyle(
@@ -121,7 +130,7 @@ class AddExpenseScreen extends StatelessWidget {
             ),
             SizedBox(height: 6),
             Container(
-              padding: EdgeInsets.all(12),
+              padding: EdgeInsets.all(16),
               decoration: BoxDecoration(
                 color: Theme.of(context).colorScheme.surface,
                 borderRadius: BorderRadius.circular(20),
@@ -139,6 +148,8 @@ class AddExpenseScreen extends StatelessWidget {
               ),
             ),
             SizedBox(height: 20),
+
+            // Save Button
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                 backgroundColor: Theme.of(context).colorScheme.primary,
@@ -154,6 +165,7 @@ class AddExpenseScreen extends StatelessWidget {
                 ),
             )
           ],
+        ),
         ),
       ),
     );

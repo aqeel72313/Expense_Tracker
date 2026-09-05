@@ -176,6 +176,7 @@ class HomeScreen extends StatelessWidget{
               SizedBox(height: 25),
 
               // Recent Expenses
+
               Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
@@ -244,7 +245,7 @@ class HomeScreen extends StatelessWidget{
                 child: Row(
                   children: [
                     Icon(
-                      Icons.fastfood_rounded,
+                      Icons.shopping_cart_rounded,
                       color: Theme.of(context).colorScheme.secondary,
                       size: 30,
                     ),
@@ -253,7 +254,7 @@ class HomeScreen extends StatelessWidget{
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          "Food",
+                          "Grocery",
                           style: TextStyle(
                             fontSize: 17,
                             fontWeight: FontWeight.bold,
@@ -261,7 +262,7 @@ class HomeScreen extends StatelessWidget{
                         ),
                         SizedBox(height: 4),
                         Text(
-                          "Today",
+                          "Yesterday",
                           style: TextStyle(
                             fontSize: 14,
                           ),
@@ -270,7 +271,7 @@ class HomeScreen extends StatelessWidget{
                     ),
                     Spacer(),
                     Text(
-                      "Rs. 850",
+                      "Rs. 1,250",
                       style: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
@@ -290,7 +291,7 @@ class HomeScreen extends StatelessWidget{
                 child: Row(
                   children: [
                     Icon(
-                      Icons.fastfood_rounded,
+                      Icons.local_taxi_rounded,
                       color: Theme.of(context).colorScheme.secondary,
                       size: 30,
                     ),
@@ -299,7 +300,7 @@ class HomeScreen extends StatelessWidget{
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          "Food",
+                          "Transport",
                           style: TextStyle(
                             fontSize: 17,
                             fontWeight: FontWeight.bold,
@@ -307,7 +308,7 @@ class HomeScreen extends StatelessWidget{
                         ),
                         SizedBox(height: 4),
                         Text(
-                          "Today",
+                          "Yesterday",
                           style: TextStyle(
                             fontSize: 14,
                           ),
@@ -316,7 +317,7 @@ class HomeScreen extends StatelessWidget{
                     ),
                     Spacer(),
                     Text(
-                      "Rs. 850",
+                      "Rs. 450",
                       style: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
