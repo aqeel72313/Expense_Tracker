@@ -10,6 +10,8 @@ class _AddExpenseScreenState extends State<AddExpenseScreen>{
 final TextEditingController titleController = TextEditingController();
 final TextEditingController amountController = TextEditingController();
 String selectedCategory = "Select Category";
+DateTime? selectedDate;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -103,14 +105,72 @@ String selectedCategory = "Select Category";
 
             // Category Field
             Text(
-              (selectedCategory),
+              "Category",
               style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
               ),
             ),
             SizedBox(height: 6),
-            Container(
+            GestureDetector(
+              onTap: () {
+                showModalBottomSheet(
+                context: context,
+                builder: (context) {
+                  return Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      ListTile(
+                        title: Text("Food"),
+                        onTap: () {
+                          setState(() {
+                            selectedCategory = "Food";
+                          });
+                          Navigator.pop(context);
+                        },
+                      ),
+                      ListTile(
+                        title: Text("Transport"),
+                        onTap: () {
+                          setState(() {
+                            selectedCategory = "Transport";
+                          });
+                          Navigator.pop(context);
+                        },
+                      ),
+                      ListTile(
+                        title: Text("Shopping"),
+                        onTap: () {
+                          setState(() {
+                            selectedCategory = "Shopping";
+                          });
+                          Navigator.pop(context);
+                        },
+                      ),
+                      ListTile(
+                        title: Text("Bills"),
+                        onTap: () {
+                          setState(() {
+                            selectedCategory = "Bills";
+                          });
+                          Navigator.pop(context);
+                        },
+                      ),
+                      ListTile(
+                        title: Text("Other"),
+                        onTap: () {
+                          setState(() {
+                            selectedCategory = "Other";
+                          });
+                          Navigator.pop(context);
+                        },
+                      ),
+                    ],
+                  );
+                },
+              );
+              },
+            child: Container(
               padding: EdgeInsets.all(16),
               decoration: BoxDecoration(
                 color: Theme.of(context).colorScheme.surface,
@@ -122,10 +182,16 @@ String selectedCategory = "Select Category";
               ),
               child: Row(
                 children: [
-                  Text("Select Category"),
+                  Text(
+                      selectedCategory,
+                    style: TextStyle(
+                      fontSize: 18,
+                    ),
+                  ),
                   Icon(Icons.keyboard_arrow_down_rounded),
                 ],
               ),
+            ),
             ),
             SizedBox(height: 16),
 
