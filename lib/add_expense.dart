@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+// For using the numeric keyboard in amount field
+import 'package:flutter/services.dart';
 
 class AddExpenseScreen extends StatefulWidget {
   const AddExpenseScreen({super.key});
@@ -78,6 +80,11 @@ DateTime? selectedDate;
             SizedBox(height: 6),
             TextField(
               controller: amountController,
+              // for number keyboard
+              keyboardType: TextInputType.number,
+              inputFormatters: [
+                FilteringTextInputFormatter.digitsOnly,
+              ],
               decoration: InputDecoration(
                 hintText: "Enter Amount",
                 filled: true,
@@ -204,7 +211,21 @@ DateTime? selectedDate;
               ),
             ),
             SizedBox(height: 6),
-            Container(
+            GestureDetector(
+              onTap: () async{
+                DateTime? pickedDate = await showDatePicker(
+                    context: context,
+                    initialDate: DateTime.now(),
+                    firstDate: DateTime(2020),
+                    lastDate: DateTime.now(),
+                );
+                if (pickedDate != null){
+                  setState(() {
+                    selectedDate = pickedDate;
+                  });
+                }
+              },
+            child: Container(
               padding: EdgeInsets.all(16),
               decoration: BoxDecoration(
                 color: Theme.of(context).colorScheme.surface,
@@ -218,8 +239,16 @@ DateTime? selectedDate;
                 children: [
                   Icon(Icons.calendar_month_rounded),
                   SizedBox(width: 6),
-                  Text("Select Date"),
-                ],
+                  Text(
+                    selectedDate == null?
+                        "Select Date"
+                            :"${selectedDate!.day}/${selectedDate!.month}/${selectedDate!.year}",
+                    style: TextStyle(
+                      fontSize: 18,
+                    ),
+                    ),
+                  ],
+                ),
               ),
             ),
             SizedBox(height: 20),
@@ -231,8 +260,22 @@ DateTime? selectedDate;
                 minimumSize: const Size(double.infinity,50),
               ),
                 onPressed:(){
+                  if(
+                  titleController.text.isEmpty ||
+                      amountController.text.isEmpty ||
+                      selectedCategory == "Select Category" ||
+                      selectedDate == null) {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                          content: Text("Please fill all fields")
+                      ),
+                    );
+                    return;
+                  }
                   print(titleController.text);
                   print(amountController.text);
+                  print(selectedCategory);
+                  print(selectedDate);
                 },
                 child: Text(
                   "Save",
