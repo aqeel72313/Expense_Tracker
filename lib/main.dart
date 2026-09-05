@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'add_expense.dart';
+import 'home_screen.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -37,7 +37,7 @@ class MyApp extends StatelessWidget {
           foregroundColor: Colors.white,
         ),
       ),
-      home: AddExpenseScreen(),
+      home: HomeScreen(),
     );
   }
 }
