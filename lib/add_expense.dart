@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
 
-class AddExpenseScreen extends StatelessWidget {
+class AddExpenseScreen extends StatefulWidget {
   const AddExpenseScreen({super.key});
 
+  @override
+  State<AddExpenseScreen> createState() => _AddExpenseScreenState();
+}
+class _AddExpenseScreenState extends State<AddExpenseScreen>{
+final TextEditingController titleController = TextEditingController();
+final TextEditingController amountController = TextEditingController();
+String selectedCategory = "Select Category";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,6 +39,7 @@ class AddExpenseScreen extends StatelessWidget {
             ),
             SizedBox(height: 6),
             TextField(
+              controller: titleController,
               decoration: InputDecoration(
                 hintText: "Enter Expense Title",
                 filled: true,
@@ -67,6 +75,7 @@ class AddExpenseScreen extends StatelessWidget {
             ),
             SizedBox(height: 6),
             TextField(
+              controller: amountController,
               decoration: InputDecoration(
                 hintText: "Enter Amount",
                 filled: true,
@@ -94,7 +103,7 @@ class AddExpenseScreen extends StatelessWidget {
 
             // Category Field
             Text(
-              "Category",
+              (selectedCategory),
               style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
@@ -155,7 +164,10 @@ class AddExpenseScreen extends StatelessWidget {
                 backgroundColor: Theme.of(context).colorScheme.primary,
                 minimumSize: const Size(double.infinity,50),
               ),
-                onPressed:(){},
+                onPressed:(){
+                  print(titleController.text);
+                  print(amountController.text);
+                },
                 child: Text(
                   "Save",
                 style: TextStyle(
