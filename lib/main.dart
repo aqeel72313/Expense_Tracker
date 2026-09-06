@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'home_screen.dart';
-import 'add_expense.dart';
+import 'screens/home_screen.dart';
+import 'screens/add_expense.dart';
+
 void main() {
   runApp(const MyApp());
 }
