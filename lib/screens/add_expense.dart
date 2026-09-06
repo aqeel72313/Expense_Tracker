@@ -274,6 +274,12 @@ DateTime? selectedDate;
                     );
                     return;
                   }
+                  final expense = Expense(
+                    title: titleController.text,
+                    amount: int.parse(amountController.text),
+                    category: selectedCategory,
+                    date: selectedDate!,
+                  );
                   print(titleController.text);
                   print(amountController.text);
                   print(selectedCategory);
