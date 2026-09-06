@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 // For using the numeric keyboard in amount field
 import 'package:flutter/services.dart';
+// .. means lib folder ke bahir aa kr models folder ma navigate kro
+import '../models/expense.dart';
 
 class AddExpenseScreen extends StatefulWidget {
   const AddExpenseScreen({super.key});
