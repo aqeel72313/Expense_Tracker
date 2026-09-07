@@ -284,7 +284,9 @@ DateTime? selectedDate;
                     category: selectedCategory,
                     date: selectedDate!,
                   );
-
+                  widget.expenses.add(expense);
+                  Navigator.pop(context);
+                  print(expense);
                   print(titleController.text);
                   print(amountController.text);
                   print(selectedCategory);

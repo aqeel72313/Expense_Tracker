@@ -39,7 +39,7 @@ class MyApp extends StatelessWidget {
           foregroundColor: Colors.white,
         ),
       ),
-      home: AddExpenseScreen(),
+      home: HomeScreen(expenses: [])
     );
   }
 }
