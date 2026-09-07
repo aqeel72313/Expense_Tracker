@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
+import '../models/expense.dart';
+import 'add_expense.dart';
 
 class HomeScreen extends StatelessWidget{
-  const HomeScreen({super.key});
+  final List<Expense> expenses;
+  const HomeScreen({
+    super.key,
+      required this.expenses,
+  });
   @override
   Widget build(BuildContext context){
       return Scaffold(
@@ -332,7 +338,16 @@ class HomeScreen extends StatelessWidget{
 
         // Floating button
         floatingActionButton: FloatingActionButton(
-            onPressed: (){},
+            onPressed: (){
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) =>AddExpenseScreen(
+                      expenses: expenses,
+                    )
+                  )
+              );
+            },
           child: Icon(Icons.add),
         ),
     );

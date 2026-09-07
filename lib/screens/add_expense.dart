@@ -5,7 +5,11 @@ import 'package:flutter/services.dart';
 import '../models/expense.dart';
 
 class AddExpenseScreen extends StatefulWidget {
-  const AddExpenseScreen({super.key});
+  final List<Expense> expenses;
+  const AddExpenseScreen({
+    super.key,
+  required this.expenses,
+  });
 
   @override
   State<AddExpenseScreen> createState() => _AddExpenseScreenState();
@@ -280,6 +284,7 @@ DateTime? selectedDate;
                     category: selectedCategory,
                     date: selectedDate!,
                   );
+
                   print(titleController.text);
                   print(amountController.text);
                   print(selectedCategory);
