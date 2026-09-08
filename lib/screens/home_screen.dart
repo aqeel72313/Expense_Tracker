@@ -2,12 +2,17 @@ import 'package:flutter/material.dart';
 import '../models/expense.dart';
 import 'add_expense.dart';
 
-class HomeScreen extends StatelessWidget{
+class HomeScreen extends StatefulWidget {
   final List<Expense> expenses;
+
   const HomeScreen({
     super.key,
-      required this.expenses,
+    required this.expenses,
   });
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context){
       return Scaffold(
@@ -343,7 +348,7 @@ class HomeScreen extends StatelessWidget{
                   context,
                   MaterialPageRoute(
                     builder: (context) =>AddExpenseScreen(
-                      expenses: expenses,
+                      expenses: widget.expenses,
                     )
                   )
               );
