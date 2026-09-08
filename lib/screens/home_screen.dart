@@ -343,15 +343,20 @@ class _HomeScreenState extends State<HomeScreen> {
 
         // Floating button
         floatingActionButton: FloatingActionButton(
-            onPressed: (){
-              Navigator.push(
+            onPressed: () async{
+              final result = await Navigator.push(
                   context,
                   MaterialPageRoute(
                     builder: (context) =>AddExpenseScreen(
                       expenses: widget.expenses,
-                    )
-                  )
+                    ),
+                  ),
               );
+              if(result==true){
+                setState(() {
+
+                });
+              }
             },
           child: Icon(Icons.add),
         ),
