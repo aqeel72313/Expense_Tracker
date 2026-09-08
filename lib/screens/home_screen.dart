@@ -203,9 +203,9 @@ class _HomeScreenState extends State<HomeScreen> {
               // Cards
               Expanded(
                 child: ListView.builder(
-                    itemCount: widget.expenses.length,
-                    itemBuilder: (context, index){
-                      final expense = widget.expenses[index];
+                  itemCount: widget.expenses.length,
+                  itemBuilder: (context, index){
+                    final expense = widget.expenses[index];
 
                       return Container(
                         width: double.infinity,
