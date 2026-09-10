@@ -233,6 +233,13 @@ class _HomeScreenState extends State<HomeScreen> {
                                       fontWeight: FontWeight.bold,
                                     ),
                                   ),
+                                  const SizedBox(height: 4),
+                                  Text(
+                                    expense.category,
+                                    style: TextStyle(
+                                      fontSize: 14
+                                    ),
+                                  ),
                                 ],
                               ),
                              const Spacer(),
