@@ -123,7 +123,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 SizedBox(height: 8),
                                 Center(
                                   child: Text(
-                                    "Rs. 4,500",
+                                    "Rs. 4,550",
                                     style: TextStyle(
                                       fontSize: 18,
                                       fontWeight: FontWeight.bold,
