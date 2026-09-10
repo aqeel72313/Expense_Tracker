@@ -57,7 +57,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                     SizedBox(height: 10),
                     Text(
-                        "Rs.12,456",
+                        "Rs.12,676",
                     style: TextStyle(
                       color: Theme.of(context).colorScheme.surface,
                       fontSize: 32,
