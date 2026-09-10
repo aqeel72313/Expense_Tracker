@@ -191,7 +191,7 @@ class _HomeScreenState extends State<HomeScreen> {
               Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
-                    "Recent Expenses",
+                    "Recent Expense",
                   style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
