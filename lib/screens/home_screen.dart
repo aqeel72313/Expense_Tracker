@@ -218,7 +218,15 @@ class _HomeScreenState extends State<HomeScreen> {
                          child: Row(
                            children: [
                              Icon(
-                               Icons.fastfood_rounded,
+                               expense.category == "Food"
+                                ? Icons.fastfood_rounded
+                                  : expense.category == "Transport"
+                                    ? Icons.local_taxi_rounded
+                                      : expense.category == "Shopping"
+                                        ? Icons.shopping_cart_rounded
+                                          : expense.category == "Bills"
+                                            ? Icons.receipt_long_rounded
+                                              : Icons.category_rounded,
                                color: Theme.of(context).colorScheme.secondary,
                                size: 30,
                              ),
