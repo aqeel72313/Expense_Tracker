@@ -13,7 +13,12 @@ class HomeScreen extends StatefulWidget {
   State<HomeScreen> createState() => _HomeScreenState();
 }
 class _HomeScreenState extends State<HomeScreen> {
+  final expense = widget.expenses[index];
   final today = DateTime.now();
+  final isToday =
+      expense.date.day == today.day &&
+      expense.date.month == today.month &&
+      expense.date.year == today.year ;
   @override
   Widget build(BuildContext context){
       return Scaffold(
@@ -251,7 +256,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                   ),
                                   SizedBox(height: 3),
                                   Text(
-                                    "${expense.date.day}/${expense.date.month}/${expense.date.year}",
+                                    isToday
+                                      ? "Today"
+                                        :"${expense.date.day}/${expense.date.month}/${expense.date.year}",
                                     style: const TextStyle(
                                       fontSize: 13,
                                     ),
