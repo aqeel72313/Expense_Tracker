@@ -241,11 +241,18 @@ class _HomeScreenState extends State<HomeScreen> {
                                       fontWeight: FontWeight.bold,
                                     ),
                                   ),
-                                  const SizedBox(height: 4),
+                                  const SizedBox(height: 3),
                                   Text(
                                     expense.category,
                                     style: TextStyle(
                                       fontSize: 14
+                                    ),
+                                  ),
+                                  SizedBox(height: 3),
+                                  Text(
+                                    "${expense.date.day}/${expense.date.month}/${expense.date.year}",
+                                    style: const TextStyle(
+                                      fontSize: 13,
                                     ),
                                   ),
                                 ],
