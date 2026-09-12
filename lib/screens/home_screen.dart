@@ -212,6 +212,13 @@ class _HomeScreenState extends State<HomeScreen> {
                             expense.date.month == today.month &&
                             expense.date.year == today.year ;
 
+                    final yesterday = today.subtract(const Duration(days: 1));
+                    final isYesterday =
+                    expense.date.day == yesterday.day &&
+                    expense.date.month == yesterday.month &&
+                    expense.date.year == yesterday.year ;
+
+
                       return Container(
                         width: double.infinity,
                         padding: EdgeInsets.all(15),
@@ -257,7 +264,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                   Text(
                                     isToday
                                       ? "Today"
-                                        :"${expense.date.day}/${expense.date.month}/${expense.date.year}",
+                                        : isYesterday
+                                          ? "Yesterday"
+                                          :"${expense.date.day}/${expense.date.month}/${expense.date.year}",
                                     style: const TextStyle(
                                       fontSize: 13,
                                     ),
