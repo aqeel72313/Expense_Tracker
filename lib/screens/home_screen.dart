@@ -222,7 +222,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       return Container(
                         width: double.infinity,
                         padding: EdgeInsets.all(15),
-                        margin: const EdgeInsets.only(bottom: 4),
+                        margin: const EdgeInsets.only(bottom: 10),
                         decoration: BoxDecoration(
                           color: Theme.of(context).colorScheme.surface,
                           borderRadius: BorderRadius.circular(15),
@@ -243,7 +243,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                size: 30,
                              ),
                              const SizedBox(width: 15),
-                              Column(
+                              Expanded(
+                              child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
@@ -273,6 +274,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   ),
                                 ],
                               ),
+                      ),
                              const Spacer(),
                              
                              Text(
