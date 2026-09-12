@@ -202,7 +202,16 @@ class _HomeScreenState extends State<HomeScreen> {
               SizedBox(height: 15),
               // Cards
               Expanded(
-                child: ListView.builder(
+                child: widget.expenses.isEmpty
+                  ? const Center(
+                  child: Text(
+                      "No expenses yet!",
+                    style: TextStyle(
+                      fontSize: 16,
+                    ),
+                  ),
+                )
+                : ListView.builder(
                   itemCount: widget.expenses.length,
                   itemBuilder: (context, index){
                     final expense = widget.expenses[index];
@@ -274,7 +283,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   ),
                                 ],
                               ),
-                      ),
+                            ),
                              const Spacer(),
                              
                              Text(
