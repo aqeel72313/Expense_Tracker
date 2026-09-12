@@ -15,6 +15,12 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context){
+    final todayExpenses = widget.expenses.where((expense){
+      final today = DateTime.now();
+      return expense.date.day == today.day &&
+          expense.date.month == today.month &&
+          expense.date.year == today.year;
+    }).toList();
       return Scaffold(
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         appBar: AppBar(
@@ -213,9 +219,9 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 )
                 : ListView.builder(
-                  itemCount: widget.expenses.length,
+                  itemCount: todayExpenses.length,
                   itemBuilder: (context, index){
-                    final expense = widget.expenses[index];
+                    final expense = todayExpenses[index];
                     final today = DateTime.now();
                     final isToday =
                         expense.date.day == today.day &&
