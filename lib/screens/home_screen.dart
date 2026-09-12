@@ -15,8 +15,8 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context){
+    final today = DateTime.now();
     final todayExpenses = widget.expenses.where((expense){
-      final today = DateTime.now();
       return expense.date.day == today.day &&
           expense.date.month == today.month &&
           expense.date.year == today.year;
@@ -209,7 +209,7 @@ class _HomeScreenState extends State<HomeScreen> {
               SizedBox(height: 15),
               // Cards
               Expanded(
-                child: widget.expenses.isEmpty
+                child: todayExpenses.isEmpty
                   ? Center(
                   child: Text(
                       "No expenses yet!",
@@ -223,11 +223,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   itemCount: todayExpenses.length,
                   itemBuilder: (context, index){
                     final expense = todayExpenses[index];
-                    final today = DateTime.now();
-                    final isToday =
-                        expense.date.day == today.day &&
-                            expense.date.month == today.month &&
-                            expense.date.year == today.year ;
+
 
                       return Container(
                         width: double.infinity,
@@ -273,9 +269,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   ),
                                   SizedBox(height: 3),
                                   Text(
-                                    isToday
-                                      ? "Today"
-                                          :"${expense.date.day}/${expense.date.month}/${expense.date.year}",
+                                      "Today",
                                     style: const TextStyle(
                                       fontSize: 13,
                                     ),
