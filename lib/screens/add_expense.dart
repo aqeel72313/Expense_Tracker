@@ -38,6 +38,7 @@ DateTime? selectedDate;
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+
               // Category Field
               Text(
                 "Category",
@@ -122,6 +123,9 @@ DateTime? selectedDate;
                         style: TextStyle(
                           fontSize: 18,
                         ),
+                      ),
+                      Padding(
+                          padding: EdgeInsets.only(left: 149),
                       ),
                       Icon(Icons.keyboard_arrow_down_rounded),
                     ],
