@@ -203,11 +203,12 @@ class _HomeScreenState extends State<HomeScreen> {
               // Cards
               Expanded(
                 child: widget.expenses.isEmpty
-                  ? const Center(
+                  ? Center(
                   child: Text(
                       "No expenses yet!",
                     style: TextStyle(
-                      fontSize: 16,
+                      fontSize: 22,
+                      color: Theme.of(context).colorScheme.surface,
                     ),
                   ),
                 )
