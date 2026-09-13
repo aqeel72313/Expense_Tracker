@@ -15,6 +15,7 @@ class HistoryScreen extends StatelessWidget{
           ),
         ),
       ),
+      // History Title
       body: Padding(
         padding: const EdgeInsets.only(
           top: 20,
@@ -34,6 +35,7 @@ class HistoryScreen extends StatelessWidget{
             ),
             const SizedBox(height: 15),
 
+            // Month Dropdown Container
             Container(
               width: double.infinity,
               padding: const EdgeInsets.symmetric(
@@ -66,6 +68,26 @@ class HistoryScreen extends StatelessWidget{
                   const Spacer(),
                   const Icon(
                     Icons.keyboard_arrow_down_rounded,
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(height: 20),
+
+            // Cards Container
+            Container(
+              width: double.infinity,
+              padding: const EdgeInsets.all(15),
+              decoration: BoxDecoration(
+                color: Theme.of(context).colorScheme.surface,
+                borderRadius: BorderRadius.circular(15),
+              ),
+              child: Row(
+                children: [
+                  Icon(
+                    Icons.fastfood_rounded,
+                    size: 30,
+                    color: Theme.of(context).colorScheme.secondary,
                   ),
                 ],
               ),
