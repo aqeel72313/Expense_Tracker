@@ -40,8 +40,8 @@ class MyApp extends StatelessWidget {
           foregroundColor: Colors.white,
         ),
       ),
-      home: HistoryScreen(expenses: [])
-      // home: HomeScreen(expenses: [])
+      // home: HistoryScreen(expenses: [])
+      home: HomeScreen(expenses: [])
     );
   }
 }

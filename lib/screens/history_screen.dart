@@ -10,6 +10,12 @@ class HistoryScreen extends StatelessWidget{
 
   @override
   Widget build(BuildContext context){
+    final now = DateTime.now();
+    final historyExpenses = expenses.where((expense){
+      final difference = now.difference(expense.date).inDays;
+      return difference >= 0 && difference <= 30;
+    }).toList();
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.primary,
@@ -83,9 +89,9 @@ class HistoryScreen extends StatelessWidget{
 
             Expanded(
               child: ListView.builder(
-                  itemCount: expenses.length,
+                  itemCount: historyExpenses.length,
                   itemBuilder: (context, index) {
-                    final expense = expenses[index];
+                    final expense = historyExpenses[index];
                     return Container(
                       width: double.infinity,
                       padding: const EdgeInsets.all(15),
@@ -100,12 +106,17 @@ class HistoryScreen extends StatelessWidget{
                       child: Row(
                         children: [
                           Icon(
-                            Icons.fastfood_rounded,
+                            expense.category == "Food"
+                              ? Icons.fastfood_rounded
+                              : expense.category == "Transport"
+                                ? Icons.local_taxi_rounded
+                                : expense.category == "Shopping"
+                                  ? Icons.shopping_cart_rounded
+                                  : expense.category == "Bills"
+                                    ? Icons.receipt_long_rounded
+                                    : Icons.category_rounded,
                             size: 30,
-                            color: Theme
-                                .of(context)
-                                .colorScheme
-                                .secondary,
+                            color: Theme.of(context).colorScheme.secondary,
                           ),
 
                           const SizedBox(width: 15),
