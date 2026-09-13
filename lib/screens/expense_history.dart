@@ -4,7 +4,7 @@ class HistoryScreen extends StatelessWidget{
   const HistoryScreen({super.key});
 
   @override
- Widget build(BuildContext context){
+  Widget build(BuildContext context){
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.primary,
@@ -20,7 +20,19 @@ class HistoryScreen extends StatelessWidget{
           top: 20,
           left: 20,
           right: 20,
-        )
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              "Expense History",
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ]
+        ),
       ),
     );
   }
