@@ -48,7 +48,27 @@ class HistoryScreen extends StatelessWidget{
                   width: 2,
                 ),
               ),
+              child: Row(
+                children: [
+                  const Icon(
+                    Icons.calendar_month_rounded,
+                  ),
 
+                  const SizedBox(width: 12),
+
+                  const Text(
+                      "September 2026",
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16,
+                    ),
+                  ),
+                  const Spacer(),
+                  const Icon(
+                    Icons.keyboard_arrow_down_rounded,
+                  ),
+                ],
+              ),
             ),
           ],
         ),

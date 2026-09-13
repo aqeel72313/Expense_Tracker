@@ -124,9 +124,7 @@ DateTime? selectedDate;
                           fontSize: 18,
                         ),
                       ),
-                      Padding(
-                          padding: EdgeInsets.only(left: 149),
-                      ),
+                      const Spacer(),
                       Icon(Icons.keyboard_arrow_down_rounded),
                     ],
                   ),
