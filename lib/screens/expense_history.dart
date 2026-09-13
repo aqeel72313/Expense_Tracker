@@ -75,55 +75,86 @@ class HistoryScreen extends StatelessWidget{
             const SizedBox(height: 20),
 
             // Cards Container
-            Container(
-              width: double.infinity,
-              padding: const EdgeInsets.all(15),
-              decoration: BoxDecoration(
-                color: Theme.of(context).colorScheme.surface,
-                borderRadius: BorderRadius.circular(15),
-              ),
-              child: Row(
-                children: [
-                  Icon(
-                    Icons.fastfood_rounded,
-                    size: 30,
-                    color: Theme.of(context).colorScheme.secondary,
-                  ),
 
-                  const SizedBox(width: 15),
-
-                  Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
+            Expanded(
+              child: ListView.builder(
+                  itemCount: 3,
+                  itemBuilder: (context, index) {
+                    return Container(
+                      width: double.infinity,
+                      padding: const EdgeInsets.all(15),
+                      decoration: BoxDecoration(
+                        color: Theme
+                            .of(context)
+                            .colorScheme
+                            .surface,
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      child: Row(
                         children: [
-                          Text(
-                            "Lunch",
-                            style: TextStyle(
-                              fontSize: 17,
-                              fontWeight: FontWeight.bold,
-                              color: Theme.of(context).colorScheme.primary,
+                          Icon(
+                            Icons.fastfood_rounded,
+                            size: 30,
+                            color: Theme
+                                .of(context)
+                                .colorScheme
+                                .secondary,
+                          ),
+
+                          const SizedBox(width: 15),
+
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "Lunch",
+                                  style: TextStyle(
+                                    fontSize: 17,
+                                    fontWeight: FontWeight.bold,
+                                    color: Theme
+                                        .of(context)
+                                        .colorScheme
+                                        .primary,
+                                  ),
+                                ),
+                                const SizedBox(height: 3),
+                                Text(
+                                  "Food",
+                                  style: TextStyle(
+                                    fontSize: 14,
+                                    color: Theme
+                                        .of(context)
+                                        .colorScheme
+                                        .primary,
+                                  ),
+                                ),
+                                const SizedBox(height: 3),
+                                Text(
+                                  "12/09/2026",
+                                  style: TextStyle(
+                                    fontSize: 13,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ],
                             ),
                           ),
-                          const SizedBox(height: 3),
                           Text(
-                            "Food",
+                            "Rs. 500",
                             style: TextStyle(
-                              fontSize: 14,
-                              color: Theme.of(context).colorScheme.primary,
-                            ),
-                          ),
-                          const SizedBox(height: 3),
-                          Text(
-                              "12/09/2026",
-                            style: TextStyle(
-                              fontSize: 13,
+                              fontSize: 16,
                               fontWeight: FontWeight.bold,
+                              color: Theme
+                                  .of(context)
+                                  .colorScheme
+                                  .primary,
                             ),
                           ),
                         ],
-                    ),
-                  ),
-                ],
+                      ),
+                    );
+                  },
               ),
             ),
           ],
