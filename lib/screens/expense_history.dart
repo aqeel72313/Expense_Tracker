@@ -29,9 +29,28 @@ class HistoryScreen extends StatelessWidget{
               style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
+                color: Theme.of(context).colorScheme.surface,
               ),
             ),
-          ]
+            const SizedBox(height: 15),
+
+            Container(
+              width: double.infinity,
+              padding: const EdgeInsets.symmetric(
+                horizontal: 15,
+                vertical: 12,
+              ),
+              decoration: BoxDecoration(
+                color: Theme.of(context).colorScheme.surface,
+                borderRadius: BorderRadius.circular(15),
+                border: Border.all(
+                  color: Theme.of(context).colorScheme.secondary,
+                  width: 2,
+                ),
+              ),
+
+            ),
+          ],
         ),
       ),
     );
