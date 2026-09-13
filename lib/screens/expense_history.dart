@@ -15,7 +15,13 @@ class HistoryScreen extends StatelessWidget{
           ),
         ),
       ),
-      body: SizedBox(),
+      body: Padding(
+        padding: const EdgeInsets.only(
+          top: 20,
+          left: 20,
+          right: 20,
+        )
+      ),
     );
   }
 }
