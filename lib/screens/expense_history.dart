@@ -89,6 +89,40 @@ class HistoryScreen extends StatelessWidget{
                     size: 30,
                     color: Theme.of(context).colorScheme.secondary,
                   ),
+
+                  const SizedBox(width: 15),
+
+                  Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Lunch",
+                            style: TextStyle(
+                              fontSize: 17,
+                              fontWeight: FontWeight.bold,
+                              color: Theme.of(context).colorScheme.primary,
+                            ),
+                          ),
+                          const SizedBox(height: 3),
+                          Text(
+                            "Food",
+                            style: TextStyle(
+                              fontSize: 14,
+                              color: Theme.of(context).colorScheme.primary,
+                            ),
+                          ),
+                          const SizedBox(height: 3),
+                          Text(
+                              "12/09/2026",
+                            style: TextStyle(
+                              fontSize: 13,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ],
+                    ),
+                  ),
                 ],
               ),
             ),
