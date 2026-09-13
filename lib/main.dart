@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'screens/home_screen.dart';
 import 'screens/add_expense.dart';
-import 'screens/expense_history.dart';
+import 'screens/history_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -40,7 +40,7 @@ class MyApp extends StatelessWidget {
           foregroundColor: Colors.white,
         ),
       ),
-      home: HistoryScreen()
+      home: HistoryScreen(expenses: [])
       // home: HomeScreen(expenses: [])
     );
   }

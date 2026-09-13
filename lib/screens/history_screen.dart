@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
+import '../models/expense.dart';
 
 class HistoryScreen extends StatelessWidget{
-  const HistoryScreen({super.key});
+  final List<Expense> expenses;
+  const HistoryScreen({
+    super.key,
+    required this.expenses,
+  });
 
   @override
   Widget build(BuildContext context){
@@ -78,11 +83,13 @@ class HistoryScreen extends StatelessWidget{
 
             Expanded(
               child: ListView.builder(
-                  itemCount: 3,
+                  itemCount: expenses.length,
                   itemBuilder: (context, index) {
+                    final expense = expenses[index];
                     return Container(
                       width: double.infinity,
                       padding: const EdgeInsets.all(15),
+                      margin: EdgeInsets.only(bottom: 10),
                       decoration: BoxDecoration(
                         color: Theme
                             .of(context)
@@ -108,7 +115,7 @@ class HistoryScreen extends StatelessWidget{
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  "Lunch",
+                                  expense.title,
                                   style: TextStyle(
                                     fontSize: 17,
                                     fontWeight: FontWeight.bold,
@@ -120,7 +127,7 @@ class HistoryScreen extends StatelessWidget{
                                 ),
                                 const SizedBox(height: 3),
                                 Text(
-                                  "Food",
+                                  expense.category,
                                   style: TextStyle(
                                     fontSize: 14,
                                     color: Theme
@@ -131,7 +138,7 @@ class HistoryScreen extends StatelessWidget{
                                 ),
                                 const SizedBox(height: 3),
                                 Text(
-                                  "12/09/2026",
+                                  "${expense.date.day}/${expense.date.month}/${expense.date.year}",
                                   style: TextStyle(
                                     fontSize: 13,
                                     fontWeight: FontWeight.bold,
@@ -141,7 +148,7 @@ class HistoryScreen extends StatelessWidget{
                             ),
                           ),
                           Text(
-                            "Rs. 500",
+                            "Rs. ${expense.amount}",
                             style: TextStyle(
                               fontSize: 16,
                               fontWeight: FontWeight.bold,

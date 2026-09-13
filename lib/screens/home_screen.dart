@@ -1,6 +1,8 @@
+import 'package:expense_tracker/screens/history_screen.dart';
 import 'package:flutter/material.dart';
 import '../models/expense.dart';
 import 'add_expense.dart';
+import 'history_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   final List<Expense> expenses;
@@ -34,7 +36,16 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           actions: [
             IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context)=> HistoryScreen(
+                              expenses: widget.expenses,
+                          ),
+                      ),
+                  );
+                },
                 icon: const Icon(Icons.history_rounded),
             )
           ],
