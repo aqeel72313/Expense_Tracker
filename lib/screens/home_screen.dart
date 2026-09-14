@@ -24,6 +24,16 @@ class _HomeScreenState extends State<HomeScreen> {
           expense.date.year == today.year;
     }).toList();
 
+    final now = DateTime.now();
+    final monthExpense = widget.expenses.where((expense){
+      return expense.date.month == now.month &&
+        expense.date.year == now.year;
+    }).toList();
+
+    final totalSpent = monthExpense.fold(
+      0,
+        (sum, expense) => sum + expense.amount,
+    );
       return Scaffold(
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         appBar: AppBar(
@@ -75,7 +85,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                     SizedBox(height: 10),
                     Text(
-                        "Rs.12,676",
+                        "Rs. $totalSpent",
                     style: TextStyle(
                       color: Theme.of(context).colorScheme.surface,
                       fontSize: 32,
