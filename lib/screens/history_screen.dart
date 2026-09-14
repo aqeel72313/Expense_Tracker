@@ -108,12 +108,12 @@ class _HistoryScreenState extends State<HistoryScreen>{
 
             // Cards Container
 
-            Expanded(
-              child: historyExpenses.isEmpty
-                ? Center(
-                      child: Text("No expenses found for this month"),
-                    )
-                  : ListView.builder(
+              Expanded(
+                child: historyExpenses.isEmpty
+                  ? const Center(
+                  child: Text("No expense found for this month"),
+                )
+                    : ListView.builder(
                   itemCount: historyExpenses.length,
                   itemBuilder: (context, index) {
                     final expense = historyExpenses[index];
@@ -122,10 +122,7 @@ class _HistoryScreenState extends State<HistoryScreen>{
                       padding: const EdgeInsets.all(15),
                       margin: EdgeInsets.only(bottom: 10),
                       decoration: BoxDecoration(
-                        color: Theme
-                            .of(context)
-                            .colorScheme
-                            .surface,
+                        color: Theme.of(context).colorScheme.surface,
                         borderRadius: BorderRadius.circular(15),
                       ),
                       child: Row(
