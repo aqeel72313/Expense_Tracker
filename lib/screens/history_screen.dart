@@ -110,8 +110,15 @@ class _HistoryScreenState extends State<HistoryScreen>{
 
               Expanded(
                 child: historyExpenses.isEmpty
-                  ? const Center(
-                  child: Text("No expense found for this month"),
+                  ? Center(
+                  child: Text(
+                    "No expense found for this month!",
+                    style: TextStyle(
+                      color: Theme.of(context).colorScheme.surface,
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                 )
                     : ListView.builder(
                   itemCount: historyExpenses.length,
