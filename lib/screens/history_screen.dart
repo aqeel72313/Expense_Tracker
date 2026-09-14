@@ -1,17 +1,23 @@
 import 'package:flutter/material.dart';
 import '../models/expense.dart';
 
-class HistoryScreen extends StatelessWidget{
+class HistoryScreen extends StatefulWidget {
   final List<Expense> expenses;
+
   const HistoryScreen({
     super.key,
     required this.expenses,
   });
 
   @override
+  State<HistoryScreen> createState() => _HistoryScreenState();
+}
+class _HistoryScreenState extends State<HistoryScreen>{
+  DateTime selectedMonth = DateTime.now();
+  @override
   Widget build(BuildContext context){
     final now = DateTime.now();
-    final historyExpenses = expenses.where((expense){
+    final historyExpenses = widget.expenses.where((expense){
       final difference = now.difference(expense.date).inDays;
       return difference >= 0 && difference <= 30;
     }).toList();
@@ -69,8 +75,8 @@ class HistoryScreen extends StatelessWidget{
 
                   const SizedBox(width: 12),
 
-                  const Text(
-                      "September 2026",
+                  Text(
+                      "${selectedMonth.month}/${selectedMonth.year}",
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 16,
