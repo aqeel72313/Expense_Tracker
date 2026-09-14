@@ -61,6 +61,11 @@ class _HistoryScreenState extends State<HistoryScreen>{
                     firstDate: DateTime(2020),
                     lastDate: DateTime.now(),
                 );
+                if(pickedDate != null){
+                  setState(() {
+                    selectedMonth = pickedDate;
+                  });
+                }
               },
             child: Container(
               width: double.infinity,
@@ -104,7 +109,11 @@ class _HistoryScreenState extends State<HistoryScreen>{
             // Cards Container
 
             Expanded(
-              child: ListView.builder(
+              child: historyExpenses.isEmpty
+                ? Center(
+                      child: Text("No expenses found for this month"),
+                    )
+                  : ListView.builder(
                   itemCount: historyExpenses.length,
                   itemBuilder: (context, index) {
                     final expense = historyExpenses[index];
