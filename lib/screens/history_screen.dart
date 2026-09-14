@@ -16,10 +16,10 @@ class _HistoryScreenState extends State<HistoryScreen>{
   DateTime selectedMonth = DateTime.now();
   @override
   Widget build(BuildContext context){
-    final now = DateTime.now();
+
     final historyExpenses = widget.expenses.where((expense){
-      final difference = now.difference(expense.date).inDays;
-      return difference >= 0 && difference <= 30;
+      return expense.date.month == selectedMonth.month &&
+        expense.date.year ==selectedMonth.year;
     }).toList();
 
     return Scaffold(
