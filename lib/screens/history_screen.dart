@@ -53,7 +53,11 @@ class _HistoryScreenState extends State<HistoryScreen>{
             const SizedBox(height: 15),
 
             // Month Dropdown Container
-            Container(
+            InkWell(
+              onTap: (){
+
+              },
+            child: Container(
               width: double.infinity,
               padding: const EdgeInsets.symmetric(
                 horizontal: 15,
@@ -85,9 +89,10 @@ class _HistoryScreenState extends State<HistoryScreen>{
                   const Spacer(),
                   const Icon(
                     Icons.keyboard_arrow_down_rounded,
-                  ),
+                    ),
                 ],
               ),
+            ),
             ),
             const SizedBox(height: 20),
 
