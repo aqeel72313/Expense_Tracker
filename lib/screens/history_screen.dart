@@ -54,8 +54,13 @@ class _HistoryScreenState extends State<HistoryScreen>{
 
             // Month Dropdown Container
             InkWell(
-              onTap: (){
-
+              onTap: () async {
+                final pickedDate = await showDatePicker(
+                    context: context,
+                    initialDate: selectedMonth,
+                    firstDate: DateTime(2020),
+                    lastDate: DateTime.now(),
+                );
               },
             child: Container(
               width: double.infinity,
