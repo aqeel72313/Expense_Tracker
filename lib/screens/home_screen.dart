@@ -14,7 +14,12 @@ class HomeScreen extends StatefulWidget {
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
-
+  String formatAmount(int amount){
+    return amount.toString().replaceAllMapped(
+      RegExp(r'\B(?=(\d{3})+(?!\d))'),
+      (match) => ',',
+    );
+  }
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context){
