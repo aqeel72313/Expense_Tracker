@@ -45,6 +45,13 @@ class _HomeScreenState extends State<HomeScreen> {
         .where((expense) => expense.category == "Food")
         .fold(0, (sum, expense) => sum + expense.amount);
 
+    final transportTotal = monthExpense
+        .where((expense) => expense.category == "Transport")
+        .fold(0, (sum, expense) => sum + expense.amount);
+
+    final shoppingTotal = monthExpense
+        .where((expense) => expense.category == "Shopping")
+        .fold(0, (sum, expense) => sum + expense.amount);
 
       return Scaffold(
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
@@ -209,7 +216,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               SizedBox(height: 8),
                               Center(
                                 child: Text(
-                                  "Rs. 5,457",
+                                  "Rs. ${formatAmount(transportTotal)}",
                                   style: TextStyle(
                                     fontSize: 18,
                                     fontWeight: FontWeight.bold,
