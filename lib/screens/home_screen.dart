@@ -97,7 +97,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                     SizedBox(height: 10),
                     Text(
-                        "Rs. $totalSpent",
+                        "Rs. ${formatAmount(totalSpent)}",
                     style: TextStyle(
                       color: Theme.of(context).colorScheme.surface,
                       fontSize: 32,
@@ -163,7 +163,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 SizedBox(height: 8),
                                 Center(
                                   child: Text(
-                                    "Rs. $foodTotal",
+                                    "Rs. ${formatAmount(foodTotal)}",
                                     style: TextStyle(
                                       fontSize: 18,
                                       fontWeight: FontWeight.bold,
