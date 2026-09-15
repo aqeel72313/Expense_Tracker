@@ -14,6 +14,7 @@ class HomeScreen extends StatefulWidget {
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
+
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context){
@@ -157,7 +158,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 SizedBox(height: 8),
                                 Center(
                                   child: Text(
-                                    "Rs. 4,550",
+                                    "Rs. $foodTotal",
                                     style: TextStyle(
                                       fontSize: 18,
                                       fontWeight: FontWeight.bold,
