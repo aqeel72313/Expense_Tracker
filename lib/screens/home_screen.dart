@@ -35,6 +35,20 @@ class _HomeScreenState extends State<HomeScreen> {
       return expense.date.month == now.month &&
         expense.date.year == now.year;
     }).toList();
+    final monthName = [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December",
+    ][now.month -1];
 
     final totalSpent = monthExpense.fold(
       0,
@@ -231,7 +245,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ],
               ),
-              SizedBox(height: 25),
+              SizedBox(height: 20),
 
               // Recent Expenses
 
