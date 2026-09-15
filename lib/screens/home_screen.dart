@@ -34,6 +34,12 @@ class _HomeScreenState extends State<HomeScreen> {
       0,
         (sum, expense) => sum + expense.amount,
     );
+
+    final foodTotal = monthExpense
+        .where((expense) => expense.category == "Food")
+        .fold(0, (sum, expense) => sum + expense.amount);
+
+
       return Scaffold(
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         appBar: AppBar(
