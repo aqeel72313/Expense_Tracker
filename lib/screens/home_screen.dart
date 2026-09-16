@@ -284,7 +284,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               SizedBox(height: 8),
                               Center(
                               child: Text(
-                                "Rs. 500",
+                                "Rs. ${formatAmount(billTotal)}",
                                 style: TextStyle(
                                   fontSize: 18,
                                   fontWeight: FontWeight.bold,
@@ -328,7 +328,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               SizedBox(height: 8),
                               Center(
                                 child: Text(
-                                  "Rs. 4500",
+                                  "Rs. ${formatAmount(shoppingTotal)}",
                                   style: TextStyle(
                                     fontSize: 18,
                                     fontWeight: FontWeight.bold,
@@ -432,7 +432,7 @@ class _HomeScreenState extends State<HomeScreen> {
                              const Spacer(),
                              
                              Text(
-                               "Rs. ${expense.amount}",
+                               "Rs. ${formatAmount(expense.amount)}",
                                style: const TextStyle(
                                  fontSize: 16,
                                  fontWeight: FontWeight.bold,
