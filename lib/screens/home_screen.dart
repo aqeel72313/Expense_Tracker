@@ -53,7 +53,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
     final totalSpent = monthExpense.fold(
       0,
-        (sum, expense) => sum + expense.amount,
+          (sum, expense) => sum + expense.amount,
     );
 
     final foodTotal = monthExpense
@@ -247,50 +247,6 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
                     ],
-                  ),
-                  SizedBox(height: 20),
-                  Expanded(
-                    child: Container(
-                      padding: EdgeInsets.all(15),
-                      alignment: Alignment.centerLeft,
-                      decoration: BoxDecoration(
-                        color: Theme.of(context).colorScheme.surface,
-                        borderRadius: BorderRadius.circular(15),
-                      ),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Icon(
-                                Icons.local_taxi_rounded,
-                                size: 20,
-                                color: Theme.of(context).colorScheme.secondary,
-                              ),
-                              SizedBox(width: 10),
-                              Text(
-                                "Transport",
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 18,
-                                ),
-                              ),
-                            ],
-                          ),
-                          SizedBox(height: 8),
-                          Center(
-                            child: Text(
-                              "Rs. ${formatAmount(transportTotal)}",
-                              style: TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
                   ),
                 ],
               ),
