@@ -67,6 +67,10 @@ class _HomeScreenState extends State<HomeScreen> {
         .where((expense) => expense.category == "Shopping")
         .fold(0, (sum, expense) => sum + expense.amount);
 
+    final billTotal = monthExpense
+        .where((expense) => expense.category == "Bill")
+        .fold(0, (sum, expense) => sum + expense.amount);
+
       return Scaffold(
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         appBar: AppBar(
@@ -126,7 +130,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                     SizedBox(height: 10),
                     Text(
-                        "August 2026",
+                        "$monthName ${now.year}",
                     style: TextStyle(
                       color:Theme.of(context).colorScheme.surface,
                       fontSize: 16,
