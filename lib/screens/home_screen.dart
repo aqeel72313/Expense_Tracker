@@ -315,7 +315,25 @@ class _HomeScreenState extends State<HomeScreen> {
                                         size: 20,
                                         color: Theme.of(context).colorScheme.secondary,
                                   ),
+                                  SizedBox(width: 10),
+                                  Text(
+                                    "Shopping",
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 18,
+                                      ),
+                                  )
                                 ],
+                              ),
+                              SizedBox(height: 8),
+                              Center(
+                                child: Text(
+                                  "Rs. 4500",
+                                  style: TextStyle(
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
                               ),
                             ],
                           ),
