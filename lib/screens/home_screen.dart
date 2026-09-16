@@ -295,6 +295,32 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                         ),
                       ),
+                      SizedBox(width: 20),
+                      Expanded(
+                        child: Container(
+                          padding: EdgeInsets.all(15),
+                          alignment: Alignment.centerLeft,
+                          decoration: BoxDecoration(
+                            color: Theme.of(context).colorScheme.surface,
+                            borderRadius: BorderRadius.circular(15),
+                          ),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Icon(
+                                      Icons.shopping_cart_rounded,
+                                        size: 20,
+                                        color: Theme.of(context).colorScheme.secondary,
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
                     ],
                   ),
                 ],
