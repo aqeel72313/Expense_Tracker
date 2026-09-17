@@ -273,7 +273,7 @@ DateTime? selectedDate;
                       selectedCategory == "Select Category" ||
                       selectedDate == null) {
                     ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(
+                      const SnackBar(
                           content: Text("Please fill all fields")
                       ),
                     );
