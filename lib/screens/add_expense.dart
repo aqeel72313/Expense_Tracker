@@ -282,7 +282,13 @@ DateTime? selectedDate;
                         ),
                     );
                   }
-
+                  if(selectedCategory == "Select Category"){
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(
+                          content: Text("Please enter title amount")
+                      ),
+                    );
+                  }
                   final expense = Expense(
                     title: titleController.text,
                     amount: int.parse(amountController.text),
