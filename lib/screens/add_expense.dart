@@ -267,14 +267,10 @@ DateTime? selectedDate;
                 minimumSize: const Size(double.infinity,50),
               ),
                 onPressed:(){
-                  if(
-                  titleController.text.isEmpty ||
-                      amountController.text.isEmpty ||
-                      selectedCategory == "Select Category" ||
-                      selectedDate == null) {
+                  if(titleController.text.isEmpty) {
                     ScaffoldMessenger.of(context).showSnackBar(
                       const SnackBar(
-                          content: Text("Please fill all fields")
+                          content: Text("Please enter expense title")
                       ),
                     );
                     return;
