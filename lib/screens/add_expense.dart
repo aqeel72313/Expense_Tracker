@@ -275,6 +275,14 @@ DateTime? selectedDate;
                     );
                     return;
                   }
+                  if(amountController.text.isEmpty){
+                    ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(
+                            content: Text("Please enter expense amount")
+                        ),
+                    );
+                  }
+
                   final expense = Expense(
                     title: titleController.text,
                     amount: int.parse(amountController.text),
