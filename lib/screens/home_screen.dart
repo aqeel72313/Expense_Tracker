@@ -29,7 +29,7 @@ class _HomeScreenState extends State<HomeScreen> {
       return expense.date.day == today.day &&
           expense.date.month == today.month &&
           expense.date.year == today.year;
-    }).toList();
+    }).toList().reversed.toList();
 
     final now = DateTime.now();
     final monthExpense = widget.expenses.where((expense){
@@ -375,8 +375,6 @@ class _HomeScreenState extends State<HomeScreen> {
                   itemCount: todayExpenses.length,
                   itemBuilder: (context, index){
                     final expense = todayExpenses[index];
-
-
                       return Container(
                         width: double.infinity,
                         padding: EdgeInsets.all(15),
