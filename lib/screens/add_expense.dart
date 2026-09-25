@@ -283,6 +283,14 @@ DateTime? selectedDate;
                     );
                     return;
                   }
+
+                  if(int.parse(amountController.text)<=0){
+                    ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(
+                            content: Text("Amount must be greater than 0"),
+                        )
+                    );
+                  }
                   if(selectedCategory == "Select Category"){
                     ScaffoldMessenger.of(context).showSnackBar(
                       const SnackBar(
