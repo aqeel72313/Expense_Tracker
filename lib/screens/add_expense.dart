@@ -281,6 +281,7 @@ DateTime? selectedDate;
                             content: Text("Please enter expense amount")
                         ),
                     );
+                    return;
                   }
                   if(selectedCategory == "Select Category"){
                     ScaffoldMessenger.of(context).showSnackBar(
@@ -288,6 +289,7 @@ DateTime? selectedDate;
                           content: Text("Please enter title amount")
                       ),
                     );
+                    return;
                   }
                   if(selectedDate == null){
                     ScaffoldMessenger.of(context).showSnackBar(
@@ -295,6 +297,7 @@ DateTime? selectedDate;
                           content: Text("Please select a date")
                       ),
                     );
+                    return;
                   }
                   final expense = Expense(
                     title: titleController.text,
