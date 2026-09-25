@@ -304,11 +304,7 @@ DateTime? selectedDate;
                   );
                   widget.expenses.add(expense);
                   Navigator.pop(context, true);
-                  print(expense);
-                  print(titleController.text);
-                  print(amountController.text);
-                  print(selectedCategory);
-                  print(selectedDate);
+
                 },
                 child: Text(
                   "Save",
