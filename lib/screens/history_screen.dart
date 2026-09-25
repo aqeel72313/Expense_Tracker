@@ -201,7 +201,9 @@ class _HistoryScreenState extends State<HistoryScreen>{
                           const SizedBox(width: 10),
 
                           IconButton(
-                              onPressed: (){},
+                              onPressed: (){
+
+                              },
                               icon: const Icon(Icons.delete_outline_rounded),
                               color: Theme.of(context).colorScheme.error,
                           ),
