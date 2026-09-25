@@ -286,7 +286,7 @@ DateTime? selectedDate;
                   if(selectedCategory == "Select Category"){
                     ScaffoldMessenger.of(context).showSnackBar(
                       const SnackBar(
-                          content: Text("Please enter title amount")
+                          content: Text("Please select a category")
                       ),
                     );
                     return;
