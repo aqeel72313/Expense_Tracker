@@ -198,6 +198,13 @@ class _HistoryScreenState extends State<HistoryScreen>{
                                   .primary,
                             ),
                           ),
+                          const SizedBox(width: 10),
+
+                          IconButton(
+                              onPressed: (){},
+                              icon: const Icon(Icons.delete_outline_rounded),
+                              color: Theme.of(context).colorScheme.error,
+                          ),
                         ],
                       ),
                     );
