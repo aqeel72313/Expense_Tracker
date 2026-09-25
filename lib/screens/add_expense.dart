@@ -289,6 +289,13 @@ DateTime? selectedDate;
                       ),
                     );
                   }
+                  if(selectedDate == null){
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(
+                          content: Text("Please select a date")
+                      ),
+                    );
+                  }
                   final expense = Expense(
                     title: titleController.text,
                     amount: int.parse(amountController.text),
