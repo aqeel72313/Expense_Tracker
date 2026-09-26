@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../models/expense.dart';
+import 'add_expense.dart';
 
 class HistoryScreen extends StatefulWidget {
   final List<Expense> expenses;
