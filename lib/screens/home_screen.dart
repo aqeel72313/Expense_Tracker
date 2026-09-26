@@ -437,7 +437,39 @@ class _HomeScreenState extends State<HomeScreen> {
                                ),
                              ),
                              IconButton(
-                                 onPressed: (){},
+                               onPressed: () async {
+                                 final confirm = await showDialog<bool>(
+                                   context: context,
+                                   builder: (context) {
+                                     return AlertDialog(
+                                       title: const Text("Delete Expense"),
+                                       content: const Text(
+                                         "Are you sure you want to delete this expense?",
+                                       ),
+                                       actions: [
+                                         TextButton(
+                                           onPressed: () {
+                                             Navigator.pop(context, false);
+                                           },
+                                           child: const Text("Cancel"),
+                                         ),
+                                         TextButton(
+                                           onPressed: () {
+                                             Navigator.pop(context, true);
+                                           },
+                                           child: const Text("Delete"),
+                                         ),
+                                       ],
+                                     );
+                                   },
+                                 );
+
+                                 if (confirm == true) {
+                                   setState(() {
+                                     widget.expenses.remove(expense);
+                                   });
+                                 }
+                               },
                                  icon: const Icon(Icons.delete_outline_rounded),
                                  color: Theme.of(context).colorScheme.error,
                              ),
