@@ -200,6 +200,14 @@ class _HistoryScreenState extends State<HistoryScreen>{
                             ),
                           ),
                           const SizedBox(width: 10),
+                          IconButton(
+                              onPressed: (){
+
+                              },
+                              icon: const Icon(Icons.edit_outlined),
+                              color: Theme.of(context).colorScheme.primary,
+                          ),
+                          const SizedBox(width: 10),
 
                           IconButton(
                               onPressed: () async {
