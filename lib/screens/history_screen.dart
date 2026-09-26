@@ -201,8 +201,20 @@ class _HistoryScreenState extends State<HistoryScreen>{
                           ),
                           const SizedBox(width: 10),
                           IconButton(
-                              onPressed: (){
-
+                              onPressed: () async {
+                                final result = await Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) =>AddExpenseScreen(
+                                        expenses: widget.expenses,
+                                      expenseToEdit: expense,
+                                    ),
+                                  ),
+                                );
+                                if(result == true){
+                                  setState(() {
+                                  });
+                                }
                               },
                               icon: const Icon(Icons.edit_outlined),
                               color: Theme.of(context).colorScheme.primary,
