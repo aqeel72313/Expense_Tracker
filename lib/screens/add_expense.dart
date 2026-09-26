@@ -6,9 +6,11 @@ import '../models/expense.dart';
 
 class AddExpenseScreen extends StatefulWidget {
   final List<Expense> expenses;
+  final Expense? expenseToEdit;
   const AddExpenseScreen({
     super.key,
-  required this.expenses,
+    required this.expenses,
+    this.expenseToEdit,
   });
 
   @override
@@ -19,6 +21,18 @@ final TextEditingController titleController = TextEditingController();
 final TextEditingController amountController = TextEditingController();
 String selectedCategory = "Select Category";
 DateTime? selectedDate;
+
+  @override
+  void initState(){
+    super.initState();
+
+    if(widget.expenseToEdit != null){
+      titleController.text = widget.expenseToEdit!.title;
+      amountController.text = widget.expenseToEdit!.amount.toString();
+      selectedCategory = widget.expenseToEdit!.category;
+      selectedDate = widget.expenseToEdit!.date;
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
