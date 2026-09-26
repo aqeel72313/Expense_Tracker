@@ -436,6 +436,11 @@ class _HomeScreenState extends State<HomeScreen> {
                                  fontWeight: FontWeight.bold,
                                ),
                              ),
+                             IconButton(
+                                 onPressed: (){},
+                                 icon: const Icon(Icons.delete_outline_rounded),
+                                 color: Theme.of(context).colorScheme.error,
+                             ),
                            ],
                          ),
                       );
