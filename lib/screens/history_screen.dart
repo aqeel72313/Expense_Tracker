@@ -215,10 +215,21 @@ class _HistoryScreenState extends State<HistoryScreen>{
                                               },
                                               child: const Text("Cancel"),
                                           ),
+                                          TextButton(
+                                              onPressed: (){
+                                                Navigator.pop(context, true);
+                                              },
+                                              child: const Text("Delete"),
+                                          ),
                                         ],
                                       );
                                     },
                                 );
+                                if(confirm == true){
+                                  setState(() {
+                                    widget.expenses.remove(expense);
+                                  });
+                                }
                               },
                               icon: const Icon(Icons.delete_outline_rounded),
                               color: Theme.of(context).colorScheme.error,
