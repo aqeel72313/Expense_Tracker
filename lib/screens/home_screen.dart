@@ -437,6 +437,13 @@ class _HomeScreenState extends State<HomeScreen> {
                                ),
                              ),
                              IconButton(
+                                 onPressed: (){
+
+                                 },
+                                 icon: Icon(Icons.edit_outlined),
+                                 color: Theme.of(context).colorScheme.primary,
+                             ),
+                             IconButton(
                                onPressed: () async {
                                  final confirm = await showDialog<bool>(
                                    context: context,
