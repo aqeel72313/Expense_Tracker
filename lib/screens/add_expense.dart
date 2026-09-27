@@ -280,8 +280,8 @@ DateTime? selectedDate;
                 backgroundColor: Theme.of(context).colorScheme.primary,
                 minimumSize: const Size(double.infinity,50),
               ),
-                onPressed:(){
-                  if(titleController.text.isEmpty) {
+                onPressed:() {
+                  if (titleController.text.isEmpty) {
                     ScaffoldMessenger.of(context).showSnackBar(
                       const SnackBar(
                           content: Text("Please enter expense title")
@@ -289,23 +289,23 @@ DateTime? selectedDate;
                     );
                     return;
                   }
-                  if(amountController.text.isEmpty){
+                  if (amountController.text.isEmpty) {
                     ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(
-                            content: Text("Please enter expense amount")
-                        ),
+                      const SnackBar(
+                          content: Text("Please enter expense amount")
+                      ),
                     );
                     return;
                   }
 
-                  if(int.parse(amountController.text)<=0){
+                  if (int.parse(amountController.text) <= 0) {
                     ScaffoldMessenger.of(context).showSnackBar(
                         const SnackBar(
-                            content: Text("Amount must be greater than 0"),
+                          content: Text("Amount must be greater than 0"),
                         )
                     );
                   }
-                  if(selectedCategory == "Select Category"){
+                  if (selectedCategory == "Select Category") {
                     ScaffoldMessenger.of(context).showSnackBar(
                       const SnackBar(
                           content: Text("Please select a category")
@@ -313,7 +313,7 @@ DateTime? selectedDate;
                     );
                     return;
                   }
-                  if(selectedDate == null){
+                  if (selectedDate == null) {
                     ScaffoldMessenger.of(context).showSnackBar(
                       const SnackBar(
                           content: Text("Please select a date")
@@ -321,13 +321,23 @@ DateTime? selectedDate;
                     );
                     return;
                   }
-                  final expense = Expense(
-                    title: titleController.text,
-                    amount: int.parse(amountController.text),
-                    category: selectedCategory,
-                    date: selectedDate!,
-                  );
+                  if (widget.expenseToEdit == null){
+                    final expense = Expense(
+                      title: titleController.text,
+                      amount: int.parse(amountController.text),
+                      category: selectedCategory,
+                      date: selectedDate!,
+                    );
                   widget.expenses.add(expense);
+                } else{
+                    final index = widget.expenses.indexOf(widget.expenseToEdit!);
+                    widget.expenses[index] = Expense(
+                      title: titleController.text,
+                      amount: int.parse(amountController.text),
+                      category: selectedCategory,
+                      date: selectedDate!,
+                    );
+                  }
                   Navigator.pop(context, true);
 
                 },
