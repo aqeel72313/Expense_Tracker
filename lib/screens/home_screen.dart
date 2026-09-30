@@ -68,7 +68,7 @@ class _HomeScreenState extends State<HomeScreen> {
         .fold(0, (sum, expense) => sum + expense.amount);
 
     final billTotal = monthExpense
-        .where((expense) => expense.category == "Bill")
+        .where((expense) => expense.category == "Bills")
         .fold(0, (sum, expense) => sum + expense.amount);
 
       return Scaffold(
