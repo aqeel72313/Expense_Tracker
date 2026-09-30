@@ -447,9 +447,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                        ),
                                    );
                                    if(result == true){
-                                     setState(() {
-
-                                     });
+                                     setState(() {});
                                    }
                                  },
                                  icon: Icon(Icons.edit_outlined),
