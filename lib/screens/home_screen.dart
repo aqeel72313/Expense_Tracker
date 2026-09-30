@@ -2,7 +2,6 @@ import 'package:expense_tracker/screens/history_screen.dart';
 import 'package:flutter/material.dart';
 import '../models/expense.dart';
 import 'add_expense.dart';
-import 'history_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   final List<Expense> expenses;
@@ -448,7 +447,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                        ),
                                    );
                                    if(result == true){
+                                     setState(() {
 
+                                     });
                                    }
                                  },
                                  icon: Icon(Icons.edit_outlined),
