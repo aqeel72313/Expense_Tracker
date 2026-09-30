@@ -427,7 +427,6 @@ class _HomeScreenState extends State<HomeScreen> {
                                 ],
                               ),
                             ),
-
                              const Spacer(),
                              
                              Text(
@@ -438,8 +437,19 @@ class _HomeScreenState extends State<HomeScreen> {
                                ),
                              ),
                              IconButton(
-                                 onPressed: (){
+                                 onPressed: () async {
+                                   final result = await Navigator.push(
+                                     context,
+                                     MaterialPageRoute(
+                                       builder: (context) => AddExpenseScreen(
+                                         expenses: widget.expenses,
+                                         expenseToEdit: expense,
+                                         ),
+                                       ),
+                                   );
+                                   if(result == true){
 
+                                   }
                                  },
                                  icon: Icon(Icons.edit_outlined),
                                  color: Theme.of(context).colorScheme.primary,
