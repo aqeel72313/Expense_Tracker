@@ -13,6 +13,12 @@ class HistoryScreen extends StatefulWidget {
   @override
   State<HistoryScreen> createState() => _HistoryScreenState();
 }
+String formatAmount(int amount) {
+  return amount.toString().replaceAllMapped(
+    RegExp(r'\B(?=(\d{3})+(?!\d))'),
+        (match) => ',',
+  );
+}
 class _HistoryScreenState extends State<HistoryScreen>{
   DateTime selectedMonth = DateTime.now();
   @override
@@ -189,7 +195,7 @@ class _HistoryScreenState extends State<HistoryScreen>{
                             ),
                           ),
                           Text(
-                            "Rs. ${expense.amount}",
+                            "Rs. ${formatAmount(expense.amount)}",
                             style: TextStyle(
                               fontSize: 16,
                               fontWeight: FontWeight.bold,
