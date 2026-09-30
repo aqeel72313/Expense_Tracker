@@ -427,6 +427,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 ],
                               ),
                             ),
+
                              const Spacer(),
                              
                              Text(
