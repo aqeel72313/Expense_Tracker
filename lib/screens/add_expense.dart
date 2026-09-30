@@ -40,7 +40,7 @@ DateTime? selectedDate;
       backgroundColor: Theme.of(context).colorScheme.surface,
       appBar: AppBar(
         title: Text(
-            "Add Expense",
+            widget.expenseToEdit == null ? "Add Expense" :  "Edit expense",
         style: TextStyle(
           fontSize: 24,
           ),
