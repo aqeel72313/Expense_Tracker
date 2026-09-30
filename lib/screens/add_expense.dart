@@ -40,7 +40,7 @@ DateTime? selectedDate;
       backgroundColor: Theme.of(context).colorScheme.surface,
       appBar: AppBar(
         title: Text(
-            widget.expenseToEdit == null ? "Add Expense" :  "Edit expense",
+            widget.expenseToEdit == null ? "Add Expense" :  "Edit Expense",
         style: TextStyle(
           fontSize: 24,
           ),
@@ -342,7 +342,7 @@ DateTime? selectedDate;
 
                 },
                 child: Text(
-                  "Save",
+                  widget.expenseToEdit == null ? "Save" :  "Edit",
                 style: TextStyle(
                   color: Theme.of(context).colorScheme.surface,
                   fontSize: 22
